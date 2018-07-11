@@ -1,0 +1,62 @@
+name:                hindley-milner
+version:             0.1.0.0
+github:              "githubuser/hindley-milner"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2018 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/hindley-milner#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  dependencies:
+  - base            >= 4.9 && < 5
+  - mtl             >= 2.2 && < 3
+  - containers      >= 0.5 && < 1
+  - parsec          >= 3.1 && < 4
+
+
+executables:
+  hindley-milner-exe:
+    main:                Main.hs
+    source-dirs:         app
+    #    ghc-options:
+    #    - -threaded
+    #    - -rtsopts
+    #    - -with-rtsopts=-N
+    dependencies:
+    - hindley-milner
+    - base            >= 4.9 && < 5
+    - mtl             >= 2.2 && < 3
+    - containers      >= 0.5 && < 1
+    - parsec          >= 3.1 && < 4
+
+tests:
+  hindley-milner-test:
+    main:                Test.hs
+    source-dirs:         test
+    #    ghc-options:
+    #    - -threaded
+    #    - -rtsopts
+    #    - -with-rtsopts=-N
+    dependencies:
+    - hindley-milner
+    - test-framework
+    - HUnit
+    - test-framework-hunit
+
